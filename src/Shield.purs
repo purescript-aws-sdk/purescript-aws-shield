@@ -20,57 +20,75 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "Shield" :: String
-
 
 -- | <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Elastic IP Address, or an Amazon Route 53 hosted zone.</p>
 createProtection :: forall eff. CreateProtectionRequest -> Aff (exception :: EXCEPTION | eff) CreateProtectionResponse
-createProtection = Request.request serviceName "createProtection" 
+createProtection = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "createProtection"
 
 
 -- | <p>Activates AWS Shield Advanced for an account.</p>
 createSubscription :: forall eff. CreateSubscriptionRequest -> Aff (exception :: EXCEPTION | eff) CreateSubscriptionResponse
-createSubscription = Request.request serviceName "createSubscription" 
+createSubscription = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "createSubscription"
 
 
 -- | <p>Deletes an AWS Shield Advanced <a>Protection</a>.</p>
 deleteProtection :: forall eff. DeleteProtectionRequest -> Aff (exception :: EXCEPTION | eff) DeleteProtectionResponse
-deleteProtection = Request.request serviceName "deleteProtection" 
+deleteProtection = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "deleteProtection"
 
 
 -- | <p>Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year subscription commitment. You cannot delete a subscription prior to the completion of that commitment. </p>
 deleteSubscription :: forall eff. DeleteSubscriptionRequest -> Aff (exception :: EXCEPTION | eff) DeleteSubscriptionResponse
-deleteSubscription = Request.request serviceName "deleteSubscription" 
+deleteSubscription = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "deleteSubscription"
 
 
 -- | <p>Describes the details of a DDoS attack. </p>
 describeAttack :: forall eff. DescribeAttackRequest -> Aff (exception :: EXCEPTION | eff) DescribeAttackResponse
-describeAttack = Request.request serviceName "describeAttack" 
+describeAttack = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "describeAttack"
 
 
 -- | <p>Lists the details of a <a>Protection</a> object.</p>
 describeProtection :: forall eff. DescribeProtectionRequest -> Aff (exception :: EXCEPTION | eff) DescribeProtectionResponse
-describeProtection = Request.request serviceName "describeProtection" 
+describeProtection = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "describeProtection"
 
 
 -- | <p>Provides details about the AWS Shield Advanced subscription for an account.</p>
 describeSubscription :: forall eff. DescribeSubscriptionRequest -> Aff (exception :: EXCEPTION | eff) DescribeSubscriptionResponse
-describeSubscription = Request.request serviceName "describeSubscription" 
+describeSubscription = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "describeSubscription"
 
 
 -- | <p>Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.</p>
 getSubscriptionState :: forall eff. GetSubscriptionStateRequest -> Aff (exception :: EXCEPTION | eff) GetSubscriptionStateResponse
-getSubscriptionState = Request.request serviceName "getSubscriptionState" 
+getSubscriptionState = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "getSubscriptionState"
 
 
 -- | <p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time period.</p>
 listAttacks :: forall eff. ListAttacksRequest -> Aff (exception :: EXCEPTION | eff) ListAttacksResponse
-listAttacks = Request.request serviceName "listAttacks" 
+listAttacks = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "listAttacks"
 
 
 -- | <p>Lists all <a>Protection</a> objects for the account.</p>
 listProtections :: forall eff. ListProtectionsRequest -> Aff (exception :: EXCEPTION | eff) ListProtectionsResponse
-listProtections = Request.request serviceName "listProtections" 
+listProtections = Request.request service method  where
+    service = Request.ServiceName "Shield"
+    method = Request.MethodName "listProtections"
 
 
 -- | <p>The details of a DDoS attack.</p>
