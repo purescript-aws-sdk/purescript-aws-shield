@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype AttackDetail
-  = AttackDetail { "AttackId" :: NullOrUndefined (AttackId), "ResourceArn" :: NullOrUndefined (ResourceArn), "SubResources" :: NullOrUndefined (SubResourceSummaryList), "StartTime" :: NullOrUndefined (AttackTimestamp), "EndTime" :: NullOrUndefined (AttackTimestamp), "AttackCounters" :: NullOrUndefined (SummarizedCounterList), "AttackProperties" :: NullOrUndefined (AttackProperties), "Mitigations" :: NullOrUndefined (MitigationList) }
+  = AttackDetail { "AttackId" :: Maybe (AttackId), "ResourceArn" :: Maybe (ResourceArn), "SubResources" :: Maybe (SubResourceSummaryList), "StartTime" :: Maybe (AttackTimestamp), "EndTime" :: Maybe (AttackTimestamp), "AttackCounters" :: Maybe (SummarizedCounterList), "AttackProperties" :: Maybe (AttackProperties), "Mitigations" :: Maybe (MitigationList) }
 ```
 
 <p>The details of a DDoS attack.</p>
@@ -35,7 +35,7 @@ Constructs AttackDetail from required parameters
 #### `newAttackDetail'`
 
 ``` purescript
-newAttackDetail' :: ({ "AttackId" :: NullOrUndefined (AttackId), "ResourceArn" :: NullOrUndefined (ResourceArn), "SubResources" :: NullOrUndefined (SubResourceSummaryList), "StartTime" :: NullOrUndefined (AttackTimestamp), "EndTime" :: NullOrUndefined (AttackTimestamp), "AttackCounters" :: NullOrUndefined (SummarizedCounterList), "AttackProperties" :: NullOrUndefined (AttackProperties), "Mitigations" :: NullOrUndefined (MitigationList) } -> { "AttackId" :: NullOrUndefined (AttackId), "ResourceArn" :: NullOrUndefined (ResourceArn), "SubResources" :: NullOrUndefined (SubResourceSummaryList), "StartTime" :: NullOrUndefined (AttackTimestamp), "EndTime" :: NullOrUndefined (AttackTimestamp), "AttackCounters" :: NullOrUndefined (SummarizedCounterList), "AttackProperties" :: NullOrUndefined (AttackProperties), "Mitigations" :: NullOrUndefined (MitigationList) }) -> AttackDetail
+newAttackDetail' :: ({ "AttackId" :: Maybe (AttackId), "ResourceArn" :: Maybe (ResourceArn), "SubResources" :: Maybe (SubResourceSummaryList), "StartTime" :: Maybe (AttackTimestamp), "EndTime" :: Maybe (AttackTimestamp), "AttackCounters" :: Maybe (SummarizedCounterList), "AttackProperties" :: Maybe (AttackProperties), "Mitigations" :: Maybe (MitigationList) } -> { "AttackId" :: Maybe (AttackId), "ResourceArn" :: Maybe (ResourceArn), "SubResources" :: Maybe (SubResourceSummaryList), "StartTime" :: Maybe (AttackTimestamp), "EndTime" :: Maybe (AttackTimestamp), "AttackCounters" :: Maybe (SummarizedCounterList), "AttackProperties" :: Maybe (AttackProperties), "Mitigations" :: Maybe (MitigationList) }) -> AttackDetail
 ```
 
 Constructs AttackDetail's fields from required parameters
@@ -92,7 +92,7 @@ Encode AttackProperties
 
 ``` purescript
 newtype AttackProperty
-  = AttackProperty { "AttackLayer" :: NullOrUndefined (AttackLayer), "AttackPropertyIdentifier" :: NullOrUndefined (AttackPropertyIdentifier), "TopContributors" :: NullOrUndefined (TopContributors), "Unit" :: NullOrUndefined (Unit''), "Total" :: NullOrUndefined (Number) }
+  = AttackProperty { "AttackLayer" :: Maybe (AttackLayer), "AttackPropertyIdentifier" :: Maybe (AttackPropertyIdentifier), "TopContributors" :: Maybe (TopContributors), "Unit" :: Maybe (Unit''), "Total" :: Maybe (Number) }
 ```
 
 <p>Details of the described attack.</p>
@@ -117,7 +117,7 @@ Constructs AttackProperty from required parameters
 #### `newAttackProperty'`
 
 ``` purescript
-newAttackProperty' :: ({ "AttackLayer" :: NullOrUndefined (AttackLayer), "AttackPropertyIdentifier" :: NullOrUndefined (AttackPropertyIdentifier), "TopContributors" :: NullOrUndefined (TopContributors), "Unit" :: NullOrUndefined (Unit''), "Total" :: NullOrUndefined (Number) } -> { "AttackLayer" :: NullOrUndefined (AttackLayer), "AttackPropertyIdentifier" :: NullOrUndefined (AttackPropertyIdentifier), "TopContributors" :: NullOrUndefined (TopContributors), "Unit" :: NullOrUndefined (Unit''), "Total" :: NullOrUndefined (Number) }) -> AttackProperty
+newAttackProperty' :: ({ "AttackLayer" :: Maybe (AttackLayer), "AttackPropertyIdentifier" :: Maybe (AttackPropertyIdentifier), "TopContributors" :: Maybe (TopContributors), "Unit" :: Maybe (Unit''), "Total" :: Maybe (Number) } -> { "AttackLayer" :: Maybe (AttackLayer), "AttackPropertyIdentifier" :: Maybe (AttackPropertyIdentifier), "TopContributors" :: Maybe (TopContributors), "Unit" :: Maybe (Unit''), "Total" :: Maybe (Number) }) -> AttackProperty
 ```
 
 Constructs AttackProperty's fields from required parameters
@@ -158,7 +158,7 @@ Encode AttackSummaries
 
 ``` purescript
 newtype AttackSummary
-  = AttackSummary { "AttackId" :: NullOrUndefined (String), "ResourceArn" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (AttackTimestamp), "EndTime" :: NullOrUndefined (AttackTimestamp), "AttackVectors" :: NullOrUndefined (AttackVectorDescriptionList) }
+  = AttackSummary { "AttackId" :: Maybe (String), "ResourceArn" :: Maybe (String), "StartTime" :: Maybe (AttackTimestamp), "EndTime" :: Maybe (AttackTimestamp), "AttackVectors" :: Maybe (AttackVectorDescriptionList) }
 ```
 
 <p>Summarizes all DDoS attacks for a specified time period.</p>
@@ -183,7 +183,7 @@ Constructs AttackSummary from required parameters
 #### `newAttackSummary'`
 
 ``` purescript
-newAttackSummary' :: ({ "AttackId" :: NullOrUndefined (String), "ResourceArn" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (AttackTimestamp), "EndTime" :: NullOrUndefined (AttackTimestamp), "AttackVectors" :: NullOrUndefined (AttackVectorDescriptionList) } -> { "AttackId" :: NullOrUndefined (String), "ResourceArn" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (AttackTimestamp), "EndTime" :: NullOrUndefined (AttackTimestamp), "AttackVectors" :: NullOrUndefined (AttackVectorDescriptionList) }) -> AttackSummary
+newAttackSummary' :: ({ "AttackId" :: Maybe (String), "ResourceArn" :: Maybe (String), "StartTime" :: Maybe (AttackTimestamp), "EndTime" :: Maybe (AttackTimestamp), "AttackVectors" :: Maybe (AttackVectorDescriptionList) } -> { "AttackId" :: Maybe (String), "ResourceArn" :: Maybe (String), "StartTime" :: Maybe (AttackTimestamp), "EndTime" :: Maybe (AttackTimestamp), "AttackVectors" :: Maybe (AttackVectorDescriptionList) }) -> AttackSummary
 ```
 
 Constructs AttackSummary's fields from required parameters
@@ -258,7 +258,7 @@ Encode AttackVectorDescriptionList
 
 ``` purescript
 newtype Contributor
-  = Contributor { "Name" :: NullOrUndefined (String), "Value" :: NullOrUndefined (Number) }
+  = Contributor { "Name" :: Maybe (String), "Value" :: Maybe (Number) }
 ```
 
 <p>A contributor to the attack and their contribution.</p>
@@ -283,7 +283,7 @@ Constructs Contributor from required parameters
 #### `newContributor'`
 
 ``` purescript
-newContributor' :: ({ "Name" :: NullOrUndefined (String), "Value" :: NullOrUndefined (Number) } -> { "Name" :: NullOrUndefined (String), "Value" :: NullOrUndefined (Number) }) -> Contributor
+newContributor' :: ({ "Name" :: Maybe (String), "Value" :: Maybe (Number) } -> { "Name" :: Maybe (String), "Value" :: Maybe (Number) }) -> Contributor
 ```
 
 Constructs Contributor's fields from required parameters
@@ -324,7 +324,7 @@ Constructs CreateProtectionRequest's fields from required parameters
 
 ``` purescript
 newtype CreateProtectionResponse
-  = CreateProtectionResponse { "ProtectionId" :: NullOrUndefined (ProtectionId) }
+  = CreateProtectionResponse { "ProtectionId" :: Maybe (ProtectionId) }
 ```
 
 ##### Instances
@@ -347,7 +347,7 @@ Constructs CreateProtectionResponse from required parameters
 #### `newCreateProtectionResponse'`
 
 ``` purescript
-newCreateProtectionResponse' :: ({ "ProtectionId" :: NullOrUndefined (ProtectionId) } -> { "ProtectionId" :: NullOrUndefined (ProtectionId) }) -> CreateProtectionResponse
+newCreateProtectionResponse' :: ({ "ProtectionId" :: Maybe (ProtectionId) } -> { "ProtectionId" :: Maybe (ProtectionId) }) -> CreateProtectionResponse
 ```
 
 Constructs CreateProtectionResponse's fields from required parameters
@@ -500,7 +500,7 @@ Constructs DescribeAttackRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAttackResponse
-  = DescribeAttackResponse { "Attack" :: NullOrUndefined (AttackDetail) }
+  = DescribeAttackResponse { "Attack" :: Maybe (AttackDetail) }
 ```
 
 ##### Instances
@@ -523,7 +523,7 @@ Constructs DescribeAttackResponse from required parameters
 #### `newDescribeAttackResponse'`
 
 ``` purescript
-newDescribeAttackResponse' :: ({ "Attack" :: NullOrUndefined (AttackDetail) } -> { "Attack" :: NullOrUndefined (AttackDetail) }) -> DescribeAttackResponse
+newDescribeAttackResponse' :: ({ "Attack" :: Maybe (AttackDetail) } -> { "Attack" :: Maybe (AttackDetail) }) -> DescribeAttackResponse
 ```
 
 Constructs DescribeAttackResponse's fields from required parameters
@@ -564,7 +564,7 @@ Constructs DescribeProtectionRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeProtectionResponse
-  = DescribeProtectionResponse { "Protection" :: NullOrUndefined (Protection) }
+  = DescribeProtectionResponse { "Protection" :: Maybe (Protection) }
 ```
 
 ##### Instances
@@ -587,7 +587,7 @@ Constructs DescribeProtectionResponse from required parameters
 #### `newDescribeProtectionResponse'`
 
 ``` purescript
-newDescribeProtectionResponse' :: ({ "Protection" :: NullOrUndefined (Protection) } -> { "Protection" :: NullOrUndefined (Protection) }) -> DescribeProtectionResponse
+newDescribeProtectionResponse' :: ({ "Protection" :: Maybe (Protection) } -> { "Protection" :: Maybe (Protection) }) -> DescribeProtectionResponse
 ```
 
 Constructs DescribeProtectionResponse's fields from required parameters
@@ -612,7 +612,7 @@ Encode DescribeSubscriptionRequest
 
 ``` purescript
 newtype DescribeSubscriptionResponse
-  = DescribeSubscriptionResponse { "Subscription" :: NullOrUndefined (Subscription) }
+  = DescribeSubscriptionResponse { "Subscription" :: Maybe (Subscription) }
 ```
 
 ##### Instances
@@ -635,7 +635,7 @@ Constructs DescribeSubscriptionResponse from required parameters
 #### `newDescribeSubscriptionResponse'`
 
 ``` purescript
-newDescribeSubscriptionResponse' :: ({ "Subscription" :: NullOrUndefined (Subscription) } -> { "Subscription" :: NullOrUndefined (Subscription) }) -> DescribeSubscriptionResponse
+newDescribeSubscriptionResponse' :: ({ "Subscription" :: Maybe (Subscription) } -> { "Subscription" :: Maybe (Subscription) }) -> DescribeSubscriptionResponse
 ```
 
 Constructs DescribeSubscriptionResponse's fields from required parameters
@@ -708,7 +708,7 @@ Constructs GetSubscriptionStateResponse's fields from required parameters
 
 ``` purescript
 newtype InternalErrorException
-  = InternalErrorException { message :: NullOrUndefined (ErrorMessage') }
+  = InternalErrorException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
@@ -733,7 +733,7 @@ Constructs InternalErrorException from required parameters
 #### `newInternalErrorException'`
 
 ``` purescript
-newInternalErrorException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InternalErrorException
+newInternalErrorException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InternalErrorException
 ```
 
 Constructs InternalErrorException's fields from required parameters
@@ -742,7 +742,7 @@ Constructs InternalErrorException's fields from required parameters
 
 ``` purescript
 newtype InvalidOperationException
-  = InvalidOperationException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidOperationException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>Exception that indicates that the operation would not cause any change to occur.</p>
@@ -767,7 +767,7 @@ Constructs InvalidOperationException from required parameters
 #### `newInvalidOperationException'`
 
 ``` purescript
-newInvalidOperationException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidOperationException
+newInvalidOperationException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidOperationException
 ```
 
 Constructs InvalidOperationException's fields from required parameters
@@ -776,7 +776,7 @@ Constructs InvalidOperationException's fields from required parameters
 
 ``` purescript
 newtype InvalidParameterException
-  = InvalidParameterException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidParameterException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>Exception that indicates that the parameters passed to the API are invalid. </p>
@@ -801,7 +801,7 @@ Constructs InvalidParameterException from required parameters
 #### `newInvalidParameterException'`
 
 ``` purescript
-newInvalidParameterException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidParameterException
+newInvalidParameterException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidParameterException
 ```
 
 Constructs InvalidParameterException's fields from required parameters
@@ -810,7 +810,7 @@ Constructs InvalidParameterException's fields from required parameters
 
 ``` purescript
 newtype InvalidResourceException
-  = InvalidResourceException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidResourceException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
@@ -835,7 +835,7 @@ Constructs InvalidResourceException from required parameters
 #### `newInvalidResourceException'`
 
 ``` purescript
-newInvalidResourceException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidResourceException
+newInvalidResourceException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidResourceException
 ```
 
 Constructs InvalidResourceException's fields from required parameters
@@ -876,7 +876,7 @@ Encode LimitType
 
 ``` purescript
 newtype LimitsExceededException
-  = LimitsExceededException { message :: NullOrUndefined (ErrorMessage'), "Type" :: NullOrUndefined (LimitType), "Limit" :: NullOrUndefined (LimitNumber) }
+  = LimitsExceededException { message :: Maybe (ErrorMessage'), "Type" :: Maybe (LimitType), "Limit" :: Maybe (LimitNumber) }
 ```
 
 <p>Exception that indicates that the operation would exceed a limit.</p> <p> <code>Type</code> is the type of limit that would be exceeded.</p> <p> <code>Limit</code> is the threshold that would be exceeded.</p>
@@ -901,7 +901,7 @@ Constructs LimitsExceededException from required parameters
 #### `newLimitsExceededException'`
 
 ``` purescript
-newLimitsExceededException' :: ({ message :: NullOrUndefined (ErrorMessage'), "Type" :: NullOrUndefined (LimitType), "Limit" :: NullOrUndefined (LimitNumber) } -> { message :: NullOrUndefined (ErrorMessage'), "Type" :: NullOrUndefined (LimitType), "Limit" :: NullOrUndefined (LimitNumber) }) -> LimitsExceededException
+newLimitsExceededException' :: ({ message :: Maybe (ErrorMessage'), "Type" :: Maybe (LimitType), "Limit" :: Maybe (LimitNumber) } -> { message :: Maybe (ErrorMessage'), "Type" :: Maybe (LimitType), "Limit" :: Maybe (LimitNumber) }) -> LimitsExceededException
 ```
 
 Constructs LimitsExceededException's fields from required parameters
@@ -910,7 +910,7 @@ Constructs LimitsExceededException's fields from required parameters
 
 ``` purescript
 newtype ListAttacksRequest
-  = ListAttacksRequest { "ResourceArns" :: NullOrUndefined (ResourceArnFilterList), "StartTime" :: NullOrUndefined (TimeRange), "EndTime" :: NullOrUndefined (TimeRange), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListAttacksRequest { "ResourceArns" :: Maybe (ResourceArnFilterList), "StartTime" :: Maybe (TimeRange), "EndTime" :: Maybe (TimeRange), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -933,7 +933,7 @@ Constructs ListAttacksRequest from required parameters
 #### `newListAttacksRequest'`
 
 ``` purescript
-newListAttacksRequest' :: ({ "ResourceArns" :: NullOrUndefined (ResourceArnFilterList), "StartTime" :: NullOrUndefined (TimeRange), "EndTime" :: NullOrUndefined (TimeRange), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "ResourceArns" :: NullOrUndefined (ResourceArnFilterList), "StartTime" :: NullOrUndefined (TimeRange), "EndTime" :: NullOrUndefined (TimeRange), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListAttacksRequest
+newListAttacksRequest' :: ({ "ResourceArns" :: Maybe (ResourceArnFilterList), "StartTime" :: Maybe (TimeRange), "EndTime" :: Maybe (TimeRange), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (MaxResults) } -> { "ResourceArns" :: Maybe (ResourceArnFilterList), "StartTime" :: Maybe (TimeRange), "EndTime" :: Maybe (TimeRange), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (MaxResults) }) -> ListAttacksRequest
 ```
 
 Constructs ListAttacksRequest's fields from required parameters
@@ -942,7 +942,7 @@ Constructs ListAttacksRequest's fields from required parameters
 
 ``` purescript
 newtype ListAttacksResponse
-  = ListAttacksResponse { "AttackSummaries" :: NullOrUndefined (AttackSummaries), "NextToken" :: NullOrUndefined (Token) }
+  = ListAttacksResponse { "AttackSummaries" :: Maybe (AttackSummaries), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -965,7 +965,7 @@ Constructs ListAttacksResponse from required parameters
 #### `newListAttacksResponse'`
 
 ``` purescript
-newListAttacksResponse' :: ({ "AttackSummaries" :: NullOrUndefined (AttackSummaries), "NextToken" :: NullOrUndefined (Token) } -> { "AttackSummaries" :: NullOrUndefined (AttackSummaries), "NextToken" :: NullOrUndefined (Token) }) -> ListAttacksResponse
+newListAttacksResponse' :: ({ "AttackSummaries" :: Maybe (AttackSummaries), "NextToken" :: Maybe (Token) } -> { "AttackSummaries" :: Maybe (AttackSummaries), "NextToken" :: Maybe (Token) }) -> ListAttacksResponse
 ```
 
 Constructs ListAttacksResponse's fields from required parameters
@@ -974,7 +974,7 @@ Constructs ListAttacksResponse's fields from required parameters
 
 ``` purescript
 newtype ListProtectionsRequest
-  = ListProtectionsRequest { "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListProtectionsRequest { "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -997,7 +997,7 @@ Constructs ListProtectionsRequest from required parameters
 #### `newListProtectionsRequest'`
 
 ``` purescript
-newListProtectionsRequest' :: ({ "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListProtectionsRequest
+newListProtectionsRequest' :: ({ "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (MaxResults) } -> { "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (MaxResults) }) -> ListProtectionsRequest
 ```
 
 Constructs ListProtectionsRequest's fields from required parameters
@@ -1006,7 +1006,7 @@ Constructs ListProtectionsRequest's fields from required parameters
 
 ``` purescript
 newtype ListProtectionsResponse
-  = ListProtectionsResponse { "Protections" :: NullOrUndefined (Protections), "NextToken" :: NullOrUndefined (Token) }
+  = ListProtectionsResponse { "Protections" :: Maybe (Protections), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -1029,7 +1029,7 @@ Constructs ListProtectionsResponse from required parameters
 #### `newListProtectionsResponse'`
 
 ``` purescript
-newListProtectionsResponse' :: ({ "Protections" :: NullOrUndefined (Protections), "NextToken" :: NullOrUndefined (Token) } -> { "Protections" :: NullOrUndefined (Protections), "NextToken" :: NullOrUndefined (Token) }) -> ListProtectionsResponse
+newListProtectionsResponse' :: ({ "Protections" :: Maybe (Protections), "NextToken" :: Maybe (Token) } -> { "Protections" :: Maybe (Protections), "NextToken" :: Maybe (Token) }) -> ListProtectionsResponse
 ```
 
 Constructs ListProtectionsResponse's fields from required parameters
@@ -1038,7 +1038,7 @@ Constructs ListProtectionsResponse's fields from required parameters
 
 ``` purescript
 newtype LockedSubscriptionException
-  = LockedSubscriptionException { message :: NullOrUndefined (ErrorMessage') }
+  = LockedSubscriptionException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>Exception that indicates that the subscription you are trying to delete has not yet completed the 1-year commitment. You cannot delete this subscription.</p>
@@ -1063,7 +1063,7 @@ Constructs LockedSubscriptionException from required parameters
 #### `newLockedSubscriptionException'`
 
 ``` purescript
-newLockedSubscriptionException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> LockedSubscriptionException
+newLockedSubscriptionException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> LockedSubscriptionException
 ```
 
 Constructs LockedSubscriptionException's fields from required parameters
@@ -1088,7 +1088,7 @@ Encode MaxResults
 
 ``` purescript
 newtype Mitigation
-  = Mitigation { "MitigationName" :: NullOrUndefined (String) }
+  = Mitigation { "MitigationName" :: Maybe (String) }
 ```
 
 <p>The mitigation applied to a DDoS attack.</p>
@@ -1113,7 +1113,7 @@ Constructs Mitigation from required parameters
 #### `newMitigation'`
 
 ``` purescript
-newMitigation' :: ({ "MitigationName" :: NullOrUndefined (String) } -> { "MitigationName" :: NullOrUndefined (String) }) -> Mitigation
+newMitigation' :: ({ "MitigationName" :: Maybe (String) } -> { "MitigationName" :: Maybe (String) }) -> Mitigation
 ```
 
 Constructs Mitigation's fields from required parameters
@@ -1138,7 +1138,7 @@ Encode MitigationList
 
 ``` purescript
 newtype OptimisticLockException
-  = OptimisticLockException { message :: NullOrUndefined (ErrorMessage') }
+  = OptimisticLockException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>
@@ -1163,7 +1163,7 @@ Constructs OptimisticLockException from required parameters
 #### `newOptimisticLockException'`
 
 ``` purescript
-newOptimisticLockException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> OptimisticLockException
+newOptimisticLockException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> OptimisticLockException
 ```
 
 Constructs OptimisticLockException's fields from required parameters
@@ -1172,7 +1172,7 @@ Constructs OptimisticLockException's fields from required parameters
 
 ``` purescript
 newtype Protection
-  = Protection { "Id" :: NullOrUndefined (ProtectionId), "Name" :: NullOrUndefined (ProtectionName), "ResourceArn" :: NullOrUndefined (ResourceArn) }
+  = Protection { "Id" :: Maybe (ProtectionId), "Name" :: Maybe (ProtectionName), "ResourceArn" :: Maybe (ResourceArn) }
 ```
 
 <p>An object that represents a resource that is under DDoS protection.</p>
@@ -1197,7 +1197,7 @@ Constructs Protection from required parameters
 #### `newProtection'`
 
 ``` purescript
-newProtection' :: ({ "Id" :: NullOrUndefined (ProtectionId), "Name" :: NullOrUndefined (ProtectionName), "ResourceArn" :: NullOrUndefined (ResourceArn) } -> { "Id" :: NullOrUndefined (ProtectionId), "Name" :: NullOrUndefined (ProtectionName), "ResourceArn" :: NullOrUndefined (ResourceArn) }) -> Protection
+newProtection' :: ({ "Id" :: Maybe (ProtectionId), "Name" :: Maybe (ProtectionName), "ResourceArn" :: Maybe (ResourceArn) } -> { "Id" :: Maybe (ProtectionId), "Name" :: Maybe (ProtectionName), "ResourceArn" :: Maybe (ResourceArn) }) -> Protection
 ```
 
 Constructs Protection's fields from required parameters
@@ -1254,7 +1254,7 @@ Encode Protections
 
 ``` purescript
 newtype ResourceAlreadyExistsException
-  = ResourceAlreadyExistsException { message :: NullOrUndefined (ErrorMessage') }
+  = ResourceAlreadyExistsException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>Exception indicating the specified resource already exists.</p>
@@ -1279,7 +1279,7 @@ Constructs ResourceAlreadyExistsException from required parameters
 #### `newResourceAlreadyExistsException'`
 
 ``` purescript
-newResourceAlreadyExistsException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ResourceAlreadyExistsException
+newResourceAlreadyExistsException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ResourceAlreadyExistsException
 ```
 
 Constructs ResourceAlreadyExistsException's fields from required parameters
@@ -1320,7 +1320,7 @@ Encode ResourceArnFilterList
 
 ``` purescript
 newtype ResourceNotFoundException
-  = ResourceNotFoundException { message :: NullOrUndefined (ErrorMessage') }
+  = ResourceNotFoundException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>Exception indicating the specified resource does not exist.</p>
@@ -1345,7 +1345,7 @@ Constructs ResourceNotFoundException from required parameters
 #### `newResourceNotFoundException'`
 
 ``` purescript
-newResourceNotFoundException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ResourceNotFoundException
+newResourceNotFoundException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ResourceNotFoundException
 ```
 
 Constructs ResourceNotFoundException's fields from required parameters
@@ -1354,7 +1354,7 @@ Constructs ResourceNotFoundException's fields from required parameters
 
 ``` purescript
 newtype SubResourceSummary
-  = SubResourceSummary { "Type" :: NullOrUndefined (SubResourceType), "Id" :: NullOrUndefined (String), "AttackVectors" :: NullOrUndefined (SummarizedAttackVectorList), "Counters" :: NullOrUndefined (SummarizedCounterList) }
+  = SubResourceSummary { "Type" :: Maybe (SubResourceType), "Id" :: Maybe (String), "AttackVectors" :: Maybe (SummarizedAttackVectorList), "Counters" :: Maybe (SummarizedCounterList) }
 ```
 
 <p>The attack information for the specified SubResource.</p>
@@ -1379,7 +1379,7 @@ Constructs SubResourceSummary from required parameters
 #### `newSubResourceSummary'`
 
 ``` purescript
-newSubResourceSummary' :: ({ "Type" :: NullOrUndefined (SubResourceType), "Id" :: NullOrUndefined (String), "AttackVectors" :: NullOrUndefined (SummarizedAttackVectorList), "Counters" :: NullOrUndefined (SummarizedCounterList) } -> { "Type" :: NullOrUndefined (SubResourceType), "Id" :: NullOrUndefined (String), "AttackVectors" :: NullOrUndefined (SummarizedAttackVectorList), "Counters" :: NullOrUndefined (SummarizedCounterList) }) -> SubResourceSummary
+newSubResourceSummary' :: ({ "Type" :: Maybe (SubResourceType), "Id" :: Maybe (String), "AttackVectors" :: Maybe (SummarizedAttackVectorList), "Counters" :: Maybe (SummarizedCounterList) } -> { "Type" :: Maybe (SubResourceType), "Id" :: Maybe (String), "AttackVectors" :: Maybe (SummarizedAttackVectorList), "Counters" :: Maybe (SummarizedCounterList) }) -> SubResourceSummary
 ```
 
 Constructs SubResourceSummary's fields from required parameters
@@ -1420,7 +1420,7 @@ Encode SubResourceType
 
 ``` purescript
 newtype Subscription
-  = Subscription { "StartTime" :: NullOrUndefined (Timestamp), "TimeCommitmentInSeconds" :: NullOrUndefined (DurationInSeconds) }
+  = Subscription { "StartTime" :: Maybe (Timestamp), "TimeCommitmentInSeconds" :: Maybe (DurationInSeconds) }
 ```
 
 <p>Information about the AWS Shield Advanced subscription for an account.</p>
@@ -1445,7 +1445,7 @@ Constructs Subscription from required parameters
 #### `newSubscription'`
 
 ``` purescript
-newSubscription' :: ({ "StartTime" :: NullOrUndefined (Timestamp), "TimeCommitmentInSeconds" :: NullOrUndefined (DurationInSeconds) } -> { "StartTime" :: NullOrUndefined (Timestamp), "TimeCommitmentInSeconds" :: NullOrUndefined (DurationInSeconds) }) -> Subscription
+newSubscription' :: ({ "StartTime" :: Maybe (Timestamp), "TimeCommitmentInSeconds" :: Maybe (DurationInSeconds) } -> { "StartTime" :: Maybe (Timestamp), "TimeCommitmentInSeconds" :: Maybe (DurationInSeconds) }) -> Subscription
 ```
 
 Constructs Subscription's fields from required parameters
@@ -1470,7 +1470,7 @@ Encode SubscriptionState
 
 ``` purescript
 newtype SummarizedAttackVector
-  = SummarizedAttackVector { "VectorType" :: String, "VectorCounters" :: NullOrUndefined (SummarizedCounterList) }
+  = SummarizedAttackVector { "VectorType" :: String, "VectorCounters" :: Maybe (SummarizedCounterList) }
 ```
 
 <p>A summary of information about the attack.</p>
@@ -1495,7 +1495,7 @@ Constructs SummarizedAttackVector from required parameters
 #### `newSummarizedAttackVector'`
 
 ``` purescript
-newSummarizedAttackVector' :: String -> ({ "VectorType" :: String, "VectorCounters" :: NullOrUndefined (SummarizedCounterList) } -> { "VectorType" :: String, "VectorCounters" :: NullOrUndefined (SummarizedCounterList) }) -> SummarizedAttackVector
+newSummarizedAttackVector' :: String -> ({ "VectorType" :: String, "VectorCounters" :: Maybe (SummarizedCounterList) } -> { "VectorType" :: String, "VectorCounters" :: Maybe (SummarizedCounterList) }) -> SummarizedAttackVector
 ```
 
 Constructs SummarizedAttackVector's fields from required parameters
@@ -1520,7 +1520,7 @@ Encode SummarizedAttackVectorList
 
 ``` purescript
 newtype SummarizedCounter
-  = SummarizedCounter { "Name" :: NullOrUndefined (String), "Max" :: NullOrUndefined (Number), "Average" :: NullOrUndefined (Number), "Sum" :: NullOrUndefined (Number), "N" :: NullOrUndefined (Int), "Unit" :: NullOrUndefined (String) }
+  = SummarizedCounter { "Name" :: Maybe (String), "Max" :: Maybe (Number), "Average" :: Maybe (Number), "Sum" :: Maybe (Number), "N" :: Maybe (Int), "Unit" :: Maybe (String) }
 ```
 
 <p>The counter that describes a DDoS attack.</p>
@@ -1545,7 +1545,7 @@ Constructs SummarizedCounter from required parameters
 #### `newSummarizedCounter'`
 
 ``` purescript
-newSummarizedCounter' :: ({ "Name" :: NullOrUndefined (String), "Max" :: NullOrUndefined (Number), "Average" :: NullOrUndefined (Number), "Sum" :: NullOrUndefined (Number), "N" :: NullOrUndefined (Int), "Unit" :: NullOrUndefined (String) } -> { "Name" :: NullOrUndefined (String), "Max" :: NullOrUndefined (Number), "Average" :: NullOrUndefined (Number), "Sum" :: NullOrUndefined (Number), "N" :: NullOrUndefined (Int), "Unit" :: NullOrUndefined (String) }) -> SummarizedCounter
+newSummarizedCounter' :: ({ "Name" :: Maybe (String), "Max" :: Maybe (Number), "Average" :: Maybe (Number), "Sum" :: Maybe (Number), "N" :: Maybe (Int), "Unit" :: Maybe (String) } -> { "Name" :: Maybe (String), "Max" :: Maybe (Number), "Average" :: Maybe (Number), "Sum" :: Maybe (Number), "N" :: Maybe (Int), "Unit" :: Maybe (String) }) -> SummarizedCounter
 ```
 
 Constructs SummarizedCounter's fields from required parameters
@@ -1570,7 +1570,7 @@ Encode SummarizedCounterList
 
 ``` purescript
 newtype TimeRange
-  = TimeRange { "FromInclusive" :: NullOrUndefined (AttackTimestamp), "ToExclusive" :: NullOrUndefined (AttackTimestamp) }
+  = TimeRange { "FromInclusive" :: Maybe (AttackTimestamp), "ToExclusive" :: Maybe (AttackTimestamp) }
 ```
 
 <p>The time range.</p>
@@ -1595,7 +1595,7 @@ Constructs TimeRange from required parameters
 #### `newTimeRange'`
 
 ``` purescript
-newTimeRange' :: ({ "FromInclusive" :: NullOrUndefined (AttackTimestamp), "ToExclusive" :: NullOrUndefined (AttackTimestamp) } -> { "FromInclusive" :: NullOrUndefined (AttackTimestamp), "ToExclusive" :: NullOrUndefined (AttackTimestamp) }) -> TimeRange
+newTimeRange' :: ({ "FromInclusive" :: Maybe (AttackTimestamp), "ToExclusive" :: Maybe (AttackTimestamp) } -> { "FromInclusive" :: Maybe (AttackTimestamp), "ToExclusive" :: Maybe (AttackTimestamp) }) -> TimeRange
 ```
 
 Constructs TimeRange's fields from required parameters

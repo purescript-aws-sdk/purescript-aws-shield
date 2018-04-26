@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,14 +19,14 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p>The details of a DDoS attack.</p>
 newtype AttackDetail = AttackDetail 
-  { "AttackId" :: NullOrUndefined (AttackId)
-  , "ResourceArn" :: NullOrUndefined (ResourceArn)
-  , "SubResources" :: NullOrUndefined (SubResourceSummaryList)
-  , "StartTime" :: NullOrUndefined (AttackTimestamp)
-  , "EndTime" :: NullOrUndefined (AttackTimestamp)
-  , "AttackCounters" :: NullOrUndefined (SummarizedCounterList)
-  , "AttackProperties" :: NullOrUndefined (AttackProperties)
-  , "Mitigations" :: NullOrUndefined (MitigationList)
+  { "AttackId" :: Maybe (AttackId)
+  , "ResourceArn" :: Maybe (ResourceArn)
+  , "SubResources" :: Maybe (SubResourceSummaryList)
+  , "StartTime" :: Maybe (AttackTimestamp)
+  , "EndTime" :: Maybe (AttackTimestamp)
+  , "AttackCounters" :: Maybe (SummarizedCounterList)
+  , "AttackProperties" :: Maybe (AttackProperties)
+  , "Mitigations" :: Maybe (MitigationList)
   }
 derive instance newtypeAttackDetail :: Newtype AttackDetail _
 derive instance repGenericAttackDetail :: Generic AttackDetail _
@@ -37,12 +36,12 @@ instance encodeAttackDetail :: Encode AttackDetail where encode = genericEncode 
 
 -- | Constructs AttackDetail from required parameters
 newAttackDetail :: AttackDetail
-newAttackDetail  = AttackDetail { "AttackCounters": (NullOrUndefined Nothing), "AttackId": (NullOrUndefined Nothing), "AttackProperties": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Mitigations": (NullOrUndefined Nothing), "ResourceArn": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "SubResources": (NullOrUndefined Nothing) }
+newAttackDetail  = AttackDetail { "AttackCounters": Nothing, "AttackId": Nothing, "AttackProperties": Nothing, "EndTime": Nothing, "Mitigations": Nothing, "ResourceArn": Nothing, "StartTime": Nothing, "SubResources": Nothing }
 
 -- | Constructs AttackDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttackDetail' :: ( { "AttackId" :: NullOrUndefined (AttackId) , "ResourceArn" :: NullOrUndefined (ResourceArn) , "SubResources" :: NullOrUndefined (SubResourceSummaryList) , "StartTime" :: NullOrUndefined (AttackTimestamp) , "EndTime" :: NullOrUndefined (AttackTimestamp) , "AttackCounters" :: NullOrUndefined (SummarizedCounterList) , "AttackProperties" :: NullOrUndefined (AttackProperties) , "Mitigations" :: NullOrUndefined (MitigationList) } -> {"AttackId" :: NullOrUndefined (AttackId) , "ResourceArn" :: NullOrUndefined (ResourceArn) , "SubResources" :: NullOrUndefined (SubResourceSummaryList) , "StartTime" :: NullOrUndefined (AttackTimestamp) , "EndTime" :: NullOrUndefined (AttackTimestamp) , "AttackCounters" :: NullOrUndefined (SummarizedCounterList) , "AttackProperties" :: NullOrUndefined (AttackProperties) , "Mitigations" :: NullOrUndefined (MitigationList) } ) -> AttackDetail
-newAttackDetail'  customize = (AttackDetail <<< customize) { "AttackCounters": (NullOrUndefined Nothing), "AttackId": (NullOrUndefined Nothing), "AttackProperties": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Mitigations": (NullOrUndefined Nothing), "ResourceArn": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "SubResources": (NullOrUndefined Nothing) }
+newAttackDetail' :: ( { "AttackId" :: Maybe (AttackId) , "ResourceArn" :: Maybe (ResourceArn) , "SubResources" :: Maybe (SubResourceSummaryList) , "StartTime" :: Maybe (AttackTimestamp) , "EndTime" :: Maybe (AttackTimestamp) , "AttackCounters" :: Maybe (SummarizedCounterList) , "AttackProperties" :: Maybe (AttackProperties) , "Mitigations" :: Maybe (MitigationList) } -> {"AttackId" :: Maybe (AttackId) , "ResourceArn" :: Maybe (ResourceArn) , "SubResources" :: Maybe (SubResourceSummaryList) , "StartTime" :: Maybe (AttackTimestamp) , "EndTime" :: Maybe (AttackTimestamp) , "AttackCounters" :: Maybe (SummarizedCounterList) , "AttackProperties" :: Maybe (AttackProperties) , "Mitigations" :: Maybe (MitigationList) } ) -> AttackDetail
+newAttackDetail'  customize = (AttackDetail <<< customize) { "AttackCounters": Nothing, "AttackId": Nothing, "AttackProperties": Nothing, "EndTime": Nothing, "Mitigations": Nothing, "ResourceArn": Nothing, "StartTime": Nothing, "SubResources": Nothing }
 
 
 
@@ -75,11 +74,11 @@ instance encodeAttackProperties :: Encode AttackProperties where encode = generi
 
 -- | <p>Details of the described attack.</p>
 newtype AttackProperty = AttackProperty 
-  { "AttackLayer" :: NullOrUndefined (AttackLayer)
-  , "AttackPropertyIdentifier" :: NullOrUndefined (AttackPropertyIdentifier)
-  , "TopContributors" :: NullOrUndefined (TopContributors)
-  , "Unit" :: NullOrUndefined (Unit'')
-  , "Total" :: NullOrUndefined (Number)
+  { "AttackLayer" :: Maybe (AttackLayer)
+  , "AttackPropertyIdentifier" :: Maybe (AttackPropertyIdentifier)
+  , "TopContributors" :: Maybe (TopContributors)
+  , "Unit" :: Maybe (Unit'')
+  , "Total" :: Maybe (Number)
   }
 derive instance newtypeAttackProperty :: Newtype AttackProperty _
 derive instance repGenericAttackProperty :: Generic AttackProperty _
@@ -89,12 +88,12 @@ instance encodeAttackProperty :: Encode AttackProperty where encode = genericEnc
 
 -- | Constructs AttackProperty from required parameters
 newAttackProperty :: AttackProperty
-newAttackProperty  = AttackProperty { "AttackLayer": (NullOrUndefined Nothing), "AttackPropertyIdentifier": (NullOrUndefined Nothing), "TopContributors": (NullOrUndefined Nothing), "Total": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newAttackProperty  = AttackProperty { "AttackLayer": Nothing, "AttackPropertyIdentifier": Nothing, "TopContributors": Nothing, "Total": Nothing, "Unit": Nothing }
 
 -- | Constructs AttackProperty's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttackProperty' :: ( { "AttackLayer" :: NullOrUndefined (AttackLayer) , "AttackPropertyIdentifier" :: NullOrUndefined (AttackPropertyIdentifier) , "TopContributors" :: NullOrUndefined (TopContributors) , "Unit" :: NullOrUndefined (Unit'') , "Total" :: NullOrUndefined (Number) } -> {"AttackLayer" :: NullOrUndefined (AttackLayer) , "AttackPropertyIdentifier" :: NullOrUndefined (AttackPropertyIdentifier) , "TopContributors" :: NullOrUndefined (TopContributors) , "Unit" :: NullOrUndefined (Unit'') , "Total" :: NullOrUndefined (Number) } ) -> AttackProperty
-newAttackProperty'  customize = (AttackProperty <<< customize) { "AttackLayer": (NullOrUndefined Nothing), "AttackPropertyIdentifier": (NullOrUndefined Nothing), "TopContributors": (NullOrUndefined Nothing), "Total": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newAttackProperty' :: ( { "AttackLayer" :: Maybe (AttackLayer) , "AttackPropertyIdentifier" :: Maybe (AttackPropertyIdentifier) , "TopContributors" :: Maybe (TopContributors) , "Unit" :: Maybe (Unit'') , "Total" :: Maybe (Number) } -> {"AttackLayer" :: Maybe (AttackLayer) , "AttackPropertyIdentifier" :: Maybe (AttackPropertyIdentifier) , "TopContributors" :: Maybe (TopContributors) , "Unit" :: Maybe (Unit'') , "Total" :: Maybe (Number) } ) -> AttackProperty
+newAttackProperty'  customize = (AttackProperty <<< customize) { "AttackLayer": Nothing, "AttackPropertyIdentifier": Nothing, "TopContributors": Nothing, "Total": Nothing, "Unit": Nothing }
 
 
 
@@ -118,11 +117,11 @@ instance encodeAttackSummaries :: Encode AttackSummaries where encode = genericE
 
 -- | <p>Summarizes all DDoS attacks for a specified time period.</p>
 newtype AttackSummary = AttackSummary 
-  { "AttackId" :: NullOrUndefined (String)
-  , "ResourceArn" :: NullOrUndefined (String)
-  , "StartTime" :: NullOrUndefined (AttackTimestamp)
-  , "EndTime" :: NullOrUndefined (AttackTimestamp)
-  , "AttackVectors" :: NullOrUndefined (AttackVectorDescriptionList)
+  { "AttackId" :: Maybe (String)
+  , "ResourceArn" :: Maybe (String)
+  , "StartTime" :: Maybe (AttackTimestamp)
+  , "EndTime" :: Maybe (AttackTimestamp)
+  , "AttackVectors" :: Maybe (AttackVectorDescriptionList)
   }
 derive instance newtypeAttackSummary :: Newtype AttackSummary _
 derive instance repGenericAttackSummary :: Generic AttackSummary _
@@ -132,12 +131,12 @@ instance encodeAttackSummary :: Encode AttackSummary where encode = genericEncod
 
 -- | Constructs AttackSummary from required parameters
 newAttackSummary :: AttackSummary
-newAttackSummary  = AttackSummary { "AttackId": (NullOrUndefined Nothing), "AttackVectors": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "ResourceArn": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newAttackSummary  = AttackSummary { "AttackId": Nothing, "AttackVectors": Nothing, "EndTime": Nothing, "ResourceArn": Nothing, "StartTime": Nothing }
 
 -- | Constructs AttackSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttackSummary' :: ( { "AttackId" :: NullOrUndefined (String) , "ResourceArn" :: NullOrUndefined (String) , "StartTime" :: NullOrUndefined (AttackTimestamp) , "EndTime" :: NullOrUndefined (AttackTimestamp) , "AttackVectors" :: NullOrUndefined (AttackVectorDescriptionList) } -> {"AttackId" :: NullOrUndefined (String) , "ResourceArn" :: NullOrUndefined (String) , "StartTime" :: NullOrUndefined (AttackTimestamp) , "EndTime" :: NullOrUndefined (AttackTimestamp) , "AttackVectors" :: NullOrUndefined (AttackVectorDescriptionList) } ) -> AttackSummary
-newAttackSummary'  customize = (AttackSummary <<< customize) { "AttackId": (NullOrUndefined Nothing), "AttackVectors": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "ResourceArn": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newAttackSummary' :: ( { "AttackId" :: Maybe (String) , "ResourceArn" :: Maybe (String) , "StartTime" :: Maybe (AttackTimestamp) , "EndTime" :: Maybe (AttackTimestamp) , "AttackVectors" :: Maybe (AttackVectorDescriptionList) } -> {"AttackId" :: Maybe (String) , "ResourceArn" :: Maybe (String) , "StartTime" :: Maybe (AttackTimestamp) , "EndTime" :: Maybe (AttackTimestamp) , "AttackVectors" :: Maybe (AttackVectorDescriptionList) } ) -> AttackSummary
+newAttackSummary'  customize = (AttackSummary <<< customize) { "AttackId": Nothing, "AttackVectors": Nothing, "EndTime": Nothing, "ResourceArn": Nothing, "StartTime": Nothing }
 
 
 
@@ -182,8 +181,8 @@ instance encodeAttackVectorDescriptionList :: Encode AttackVectorDescriptionList
 
 -- | <p>A contributor to the attack and their contribution.</p>
 newtype Contributor = Contributor 
-  { "Name" :: NullOrUndefined (String)
-  , "Value" :: NullOrUndefined (Number)
+  { "Name" :: Maybe (String)
+  , "Value" :: Maybe (Number)
   }
 derive instance newtypeContributor :: Newtype Contributor _
 derive instance repGenericContributor :: Generic Contributor _
@@ -193,12 +192,12 @@ instance encodeContributor :: Encode Contributor where encode = genericEncode op
 
 -- | Constructs Contributor from required parameters
 newContributor :: Contributor
-newContributor  = Contributor { "Name": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newContributor  = Contributor { "Name": Nothing, "Value": Nothing }
 
 -- | Constructs Contributor's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newContributor' :: ( { "Name" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (Number) } -> {"Name" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (Number) } ) -> Contributor
-newContributor'  customize = (Contributor <<< customize) { "Name": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newContributor' :: ( { "Name" :: Maybe (String) , "Value" :: Maybe (Number) } -> {"Name" :: Maybe (String) , "Value" :: Maybe (Number) } ) -> Contributor
+newContributor'  customize = (Contributor <<< customize) { "Name": Nothing, "Value": Nothing }
 
 
 
@@ -224,7 +223,7 @@ newCreateProtectionRequest' _Name _ResourceArn customize = (CreateProtectionRequ
 
 
 newtype CreateProtectionResponse = CreateProtectionResponse 
-  { "ProtectionId" :: NullOrUndefined (ProtectionId)
+  { "ProtectionId" :: Maybe (ProtectionId)
   }
 derive instance newtypeCreateProtectionResponse :: Newtype CreateProtectionResponse _
 derive instance repGenericCreateProtectionResponse :: Generic CreateProtectionResponse _
@@ -234,12 +233,12 @@ instance encodeCreateProtectionResponse :: Encode CreateProtectionResponse where
 
 -- | Constructs CreateProtectionResponse from required parameters
 newCreateProtectionResponse :: CreateProtectionResponse
-newCreateProtectionResponse  = CreateProtectionResponse { "ProtectionId": (NullOrUndefined Nothing) }
+newCreateProtectionResponse  = CreateProtectionResponse { "ProtectionId": Nothing }
 
 -- | Constructs CreateProtectionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateProtectionResponse' :: ( { "ProtectionId" :: NullOrUndefined (ProtectionId) } -> {"ProtectionId" :: NullOrUndefined (ProtectionId) } ) -> CreateProtectionResponse
-newCreateProtectionResponse'  customize = (CreateProtectionResponse <<< customize) { "ProtectionId": (NullOrUndefined Nothing) }
+newCreateProtectionResponse' :: ( { "ProtectionId" :: Maybe (ProtectionId) } -> {"ProtectionId" :: Maybe (ProtectionId) } ) -> CreateProtectionResponse
+newCreateProtectionResponse'  customize = (CreateProtectionResponse <<< customize) { "ProtectionId": Nothing }
 
 
 
@@ -329,7 +328,7 @@ newDescribeAttackRequest' _AttackId customize = (DescribeAttackRequest <<< custo
 
 
 newtype DescribeAttackResponse = DescribeAttackResponse 
-  { "Attack" :: NullOrUndefined (AttackDetail)
+  { "Attack" :: Maybe (AttackDetail)
   }
 derive instance newtypeDescribeAttackResponse :: Newtype DescribeAttackResponse _
 derive instance repGenericDescribeAttackResponse :: Generic DescribeAttackResponse _
@@ -339,12 +338,12 @@ instance encodeDescribeAttackResponse :: Encode DescribeAttackResponse where enc
 
 -- | Constructs DescribeAttackResponse from required parameters
 newDescribeAttackResponse :: DescribeAttackResponse
-newDescribeAttackResponse  = DescribeAttackResponse { "Attack": (NullOrUndefined Nothing) }
+newDescribeAttackResponse  = DescribeAttackResponse { "Attack": Nothing }
 
 -- | Constructs DescribeAttackResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAttackResponse' :: ( { "Attack" :: NullOrUndefined (AttackDetail) } -> {"Attack" :: NullOrUndefined (AttackDetail) } ) -> DescribeAttackResponse
-newDescribeAttackResponse'  customize = (DescribeAttackResponse <<< customize) { "Attack": (NullOrUndefined Nothing) }
+newDescribeAttackResponse' :: ( { "Attack" :: Maybe (AttackDetail) } -> {"Attack" :: Maybe (AttackDetail) } ) -> DescribeAttackResponse
+newDescribeAttackResponse'  customize = (DescribeAttackResponse <<< customize) { "Attack": Nothing }
 
 
 
@@ -369,7 +368,7 @@ newDescribeProtectionRequest' _ProtectionId customize = (DescribeProtectionReque
 
 
 newtype DescribeProtectionResponse = DescribeProtectionResponse 
-  { "Protection" :: NullOrUndefined (Protection)
+  { "Protection" :: Maybe (Protection)
   }
 derive instance newtypeDescribeProtectionResponse :: Newtype DescribeProtectionResponse _
 derive instance repGenericDescribeProtectionResponse :: Generic DescribeProtectionResponse _
@@ -379,12 +378,12 @@ instance encodeDescribeProtectionResponse :: Encode DescribeProtectionResponse w
 
 -- | Constructs DescribeProtectionResponse from required parameters
 newDescribeProtectionResponse :: DescribeProtectionResponse
-newDescribeProtectionResponse  = DescribeProtectionResponse { "Protection": (NullOrUndefined Nothing) }
+newDescribeProtectionResponse  = DescribeProtectionResponse { "Protection": Nothing }
 
 -- | Constructs DescribeProtectionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeProtectionResponse' :: ( { "Protection" :: NullOrUndefined (Protection) } -> {"Protection" :: NullOrUndefined (Protection) } ) -> DescribeProtectionResponse
-newDescribeProtectionResponse'  customize = (DescribeProtectionResponse <<< customize) { "Protection": (NullOrUndefined Nothing) }
+newDescribeProtectionResponse' :: ( { "Protection" :: Maybe (Protection) } -> {"Protection" :: Maybe (Protection) } ) -> DescribeProtectionResponse
+newDescribeProtectionResponse'  customize = (DescribeProtectionResponse <<< customize) { "Protection": Nothing }
 
 
 
@@ -398,7 +397,7 @@ instance encodeDescribeSubscriptionRequest :: Encode DescribeSubscriptionRequest
 
 
 newtype DescribeSubscriptionResponse = DescribeSubscriptionResponse 
-  { "Subscription" :: NullOrUndefined (Subscription)
+  { "Subscription" :: Maybe (Subscription)
   }
 derive instance newtypeDescribeSubscriptionResponse :: Newtype DescribeSubscriptionResponse _
 derive instance repGenericDescribeSubscriptionResponse :: Generic DescribeSubscriptionResponse _
@@ -408,12 +407,12 @@ instance encodeDescribeSubscriptionResponse :: Encode DescribeSubscriptionRespon
 
 -- | Constructs DescribeSubscriptionResponse from required parameters
 newDescribeSubscriptionResponse :: DescribeSubscriptionResponse
-newDescribeSubscriptionResponse  = DescribeSubscriptionResponse { "Subscription": (NullOrUndefined Nothing) }
+newDescribeSubscriptionResponse  = DescribeSubscriptionResponse { "Subscription": Nothing }
 
 -- | Constructs DescribeSubscriptionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSubscriptionResponse' :: ( { "Subscription" :: NullOrUndefined (Subscription) } -> {"Subscription" :: NullOrUndefined (Subscription) } ) -> DescribeSubscriptionResponse
-newDescribeSubscriptionResponse'  customize = (DescribeSubscriptionResponse <<< customize) { "Subscription": (NullOrUndefined Nothing) }
+newDescribeSubscriptionResponse' :: ( { "Subscription" :: Maybe (Subscription) } -> {"Subscription" :: Maybe (Subscription) } ) -> DescribeSubscriptionResponse
+newDescribeSubscriptionResponse'  customize = (DescribeSubscriptionResponse <<< customize) { "Subscription": Nothing }
 
 
 
@@ -457,7 +456,7 @@ newGetSubscriptionStateResponse' _SubscriptionState customize = (GetSubscription
 
 -- | <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
 newtype InternalErrorException = InternalErrorException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInternalErrorException :: Newtype InternalErrorException _
 derive instance repGenericInternalErrorException :: Generic InternalErrorException _
@@ -467,18 +466,18 @@ instance encodeInternalErrorException :: Encode InternalErrorException where enc
 
 -- | Constructs InternalErrorException from required parameters
 newInternalErrorException :: InternalErrorException
-newInternalErrorException  = InternalErrorException { "message": (NullOrUndefined Nothing) }
+newInternalErrorException  = InternalErrorException { "message": Nothing }
 
 -- | Constructs InternalErrorException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalErrorException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InternalErrorException
-newInternalErrorException'  customize = (InternalErrorException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInternalErrorException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InternalErrorException
+newInternalErrorException'  customize = (InternalErrorException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Exception that indicates that the operation would not cause any change to occur.</p>
 newtype InvalidOperationException = InvalidOperationException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidOperationException :: Newtype InvalidOperationException _
 derive instance repGenericInvalidOperationException :: Generic InvalidOperationException _
@@ -488,18 +487,18 @@ instance encodeInvalidOperationException :: Encode InvalidOperationException whe
 
 -- | Constructs InvalidOperationException from required parameters
 newInvalidOperationException :: InvalidOperationException
-newInvalidOperationException  = InvalidOperationException { "message": (NullOrUndefined Nothing) }
+newInvalidOperationException  = InvalidOperationException { "message": Nothing }
 
 -- | Constructs InvalidOperationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidOperationException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidOperationException
-newInvalidOperationException'  customize = (InvalidOperationException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidOperationException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidOperationException
+newInvalidOperationException'  customize = (InvalidOperationException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Exception that indicates that the parameters passed to the API are invalid. </p>
 newtype InvalidParameterException = InvalidParameterException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidParameterException :: Newtype InvalidParameterException _
 derive instance repGenericInvalidParameterException :: Generic InvalidParameterException _
@@ -509,18 +508,18 @@ instance encodeInvalidParameterException :: Encode InvalidParameterException whe
 
 -- | Constructs InvalidParameterException from required parameters
 newInvalidParameterException :: InvalidParameterException
-newInvalidParameterException  = InvalidParameterException { "message": (NullOrUndefined Nothing) }
+newInvalidParameterException  = InvalidParameterException { "message": Nothing }
 
 -- | Constructs InvalidParameterException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidParameterException
-newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidParameterException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidParameterException
+newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
 newtype InvalidResourceException = InvalidResourceException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidResourceException :: Newtype InvalidResourceException _
 derive instance repGenericInvalidResourceException :: Generic InvalidResourceException _
@@ -530,12 +529,12 @@ instance encodeInvalidResourceException :: Encode InvalidResourceException where
 
 -- | Constructs InvalidResourceException from required parameters
 newInvalidResourceException :: InvalidResourceException
-newInvalidResourceException  = InvalidResourceException { "message": (NullOrUndefined Nothing) }
+newInvalidResourceException  = InvalidResourceException { "message": Nothing }
 
 -- | Constructs InvalidResourceException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidResourceException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidResourceException
-newInvalidResourceException'  customize = (InvalidResourceException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidResourceException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidResourceException
+newInvalidResourceException'  customize = (InvalidResourceException <<< customize) { "message": Nothing }
 
 
 
@@ -559,9 +558,9 @@ instance encodeLimitType :: Encode LimitType where encode = genericEncode option
 
 -- | <p>Exception that indicates that the operation would exceed a limit.</p> <p> <code>Type</code> is the type of limit that would be exceeded.</p> <p> <code>Limit</code> is the threshold that would be exceeded.</p>
 newtype LimitsExceededException = LimitsExceededException 
-  { "message" :: NullOrUndefined (ErrorMessage')
-  , "Type" :: NullOrUndefined (LimitType)
-  , "Limit" :: NullOrUndefined (LimitNumber)
+  { "message" :: Maybe (ErrorMessage')
+  , "Type" :: Maybe (LimitType)
+  , "Limit" :: Maybe (LimitNumber)
   }
 derive instance newtypeLimitsExceededException :: Newtype LimitsExceededException _
 derive instance repGenericLimitsExceededException :: Generic LimitsExceededException _
@@ -571,21 +570,21 @@ instance encodeLimitsExceededException :: Encode LimitsExceededException where e
 
 -- | Constructs LimitsExceededException from required parameters
 newLimitsExceededException :: LimitsExceededException
-newLimitsExceededException  = LimitsExceededException { "Limit": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing) }
+newLimitsExceededException  = LimitsExceededException { "Limit": Nothing, "Type": Nothing, "message": Nothing }
 
 -- | Constructs LimitsExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimitsExceededException' :: ( { "message" :: NullOrUndefined (ErrorMessage') , "Type" :: NullOrUndefined (LimitType) , "Limit" :: NullOrUndefined (LimitNumber) } -> {"message" :: NullOrUndefined (ErrorMessage') , "Type" :: NullOrUndefined (LimitType) , "Limit" :: NullOrUndefined (LimitNumber) } ) -> LimitsExceededException
-newLimitsExceededException'  customize = (LimitsExceededException <<< customize) { "Limit": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing) }
+newLimitsExceededException' :: ( { "message" :: Maybe (ErrorMessage') , "Type" :: Maybe (LimitType) , "Limit" :: Maybe (LimitNumber) } -> {"message" :: Maybe (ErrorMessage') , "Type" :: Maybe (LimitType) , "Limit" :: Maybe (LimitNumber) } ) -> LimitsExceededException
+newLimitsExceededException'  customize = (LimitsExceededException <<< customize) { "Limit": Nothing, "Type": Nothing, "message": Nothing }
 
 
 
 newtype ListAttacksRequest = ListAttacksRequest 
-  { "ResourceArns" :: NullOrUndefined (ResourceArnFilterList)
-  , "StartTime" :: NullOrUndefined (TimeRange)
-  , "EndTime" :: NullOrUndefined (TimeRange)
-  , "NextToken" :: NullOrUndefined (Token)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  { "ResourceArns" :: Maybe (ResourceArnFilterList)
+  , "StartTime" :: Maybe (TimeRange)
+  , "EndTime" :: Maybe (TimeRange)
+  , "NextToken" :: Maybe (Token)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListAttacksRequest :: Newtype ListAttacksRequest _
 derive instance repGenericListAttacksRequest :: Generic ListAttacksRequest _
@@ -595,18 +594,18 @@ instance encodeListAttacksRequest :: Encode ListAttacksRequest where encode = ge
 
 -- | Constructs ListAttacksRequest from required parameters
 newListAttacksRequest :: ListAttacksRequest
-newListAttacksRequest  = ListAttacksRequest { "EndTime": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ResourceArns": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newListAttacksRequest  = ListAttacksRequest { "EndTime": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ResourceArns": Nothing, "StartTime": Nothing }
 
 -- | Constructs ListAttacksRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAttacksRequest' :: ( { "ResourceArns" :: NullOrUndefined (ResourceArnFilterList) , "StartTime" :: NullOrUndefined (TimeRange) , "EndTime" :: NullOrUndefined (TimeRange) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"ResourceArns" :: NullOrUndefined (ResourceArnFilterList) , "StartTime" :: NullOrUndefined (TimeRange) , "EndTime" :: NullOrUndefined (TimeRange) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListAttacksRequest
-newListAttacksRequest'  customize = (ListAttacksRequest <<< customize) { "EndTime": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ResourceArns": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newListAttacksRequest' :: ( { "ResourceArns" :: Maybe (ResourceArnFilterList) , "StartTime" :: Maybe (TimeRange) , "EndTime" :: Maybe (TimeRange) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (MaxResults) } -> {"ResourceArns" :: Maybe (ResourceArnFilterList) , "StartTime" :: Maybe (TimeRange) , "EndTime" :: Maybe (TimeRange) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (MaxResults) } ) -> ListAttacksRequest
+newListAttacksRequest'  customize = (ListAttacksRequest <<< customize) { "EndTime": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ResourceArns": Nothing, "StartTime": Nothing }
 
 
 
 newtype ListAttacksResponse = ListAttacksResponse 
-  { "AttackSummaries" :: NullOrUndefined (AttackSummaries)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "AttackSummaries" :: Maybe (AttackSummaries)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeListAttacksResponse :: Newtype ListAttacksResponse _
 derive instance repGenericListAttacksResponse :: Generic ListAttacksResponse _
@@ -616,18 +615,18 @@ instance encodeListAttacksResponse :: Encode ListAttacksResponse where encode = 
 
 -- | Constructs ListAttacksResponse from required parameters
 newListAttacksResponse :: ListAttacksResponse
-newListAttacksResponse  = ListAttacksResponse { "AttackSummaries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAttacksResponse  = ListAttacksResponse { "AttackSummaries": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListAttacksResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAttacksResponse' :: ( { "AttackSummaries" :: NullOrUndefined (AttackSummaries) , "NextToken" :: NullOrUndefined (Token) } -> {"AttackSummaries" :: NullOrUndefined (AttackSummaries) , "NextToken" :: NullOrUndefined (Token) } ) -> ListAttacksResponse
-newListAttacksResponse'  customize = (ListAttacksResponse <<< customize) { "AttackSummaries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAttacksResponse' :: ( { "AttackSummaries" :: Maybe (AttackSummaries) , "NextToken" :: Maybe (Token) } -> {"AttackSummaries" :: Maybe (AttackSummaries) , "NextToken" :: Maybe (Token) } ) -> ListAttacksResponse
+newListAttacksResponse'  customize = (ListAttacksResponse <<< customize) { "AttackSummaries": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListProtectionsRequest = ListProtectionsRequest 
-  { "NextToken" :: NullOrUndefined (Token)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  { "NextToken" :: Maybe (Token)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListProtectionsRequest :: Newtype ListProtectionsRequest _
 derive instance repGenericListProtectionsRequest :: Generic ListProtectionsRequest _
@@ -637,18 +636,18 @@ instance encodeListProtectionsRequest :: Encode ListProtectionsRequest where enc
 
 -- | Constructs ListProtectionsRequest from required parameters
 newListProtectionsRequest :: ListProtectionsRequest
-newListProtectionsRequest  = ListProtectionsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListProtectionsRequest  = ListProtectionsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListProtectionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListProtectionsRequest' :: ( { "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListProtectionsRequest
-newListProtectionsRequest'  customize = (ListProtectionsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListProtectionsRequest' :: ( { "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (MaxResults) } -> {"NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (MaxResults) } ) -> ListProtectionsRequest
+newListProtectionsRequest'  customize = (ListProtectionsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListProtectionsResponse = ListProtectionsResponse 
-  { "Protections" :: NullOrUndefined (Protections)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "Protections" :: Maybe (Protections)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeListProtectionsResponse :: Newtype ListProtectionsResponse _
 derive instance repGenericListProtectionsResponse :: Generic ListProtectionsResponse _
@@ -658,18 +657,18 @@ instance encodeListProtectionsResponse :: Encode ListProtectionsResponse where e
 
 -- | Constructs ListProtectionsResponse from required parameters
 newListProtectionsResponse :: ListProtectionsResponse
-newListProtectionsResponse  = ListProtectionsResponse { "NextToken": (NullOrUndefined Nothing), "Protections": (NullOrUndefined Nothing) }
+newListProtectionsResponse  = ListProtectionsResponse { "NextToken": Nothing, "Protections": Nothing }
 
 -- | Constructs ListProtectionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListProtectionsResponse' :: ( { "Protections" :: NullOrUndefined (Protections) , "NextToken" :: NullOrUndefined (Token) } -> {"Protections" :: NullOrUndefined (Protections) , "NextToken" :: NullOrUndefined (Token) } ) -> ListProtectionsResponse
-newListProtectionsResponse'  customize = (ListProtectionsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Protections": (NullOrUndefined Nothing) }
+newListProtectionsResponse' :: ( { "Protections" :: Maybe (Protections) , "NextToken" :: Maybe (Token) } -> {"Protections" :: Maybe (Protections) , "NextToken" :: Maybe (Token) } ) -> ListProtectionsResponse
+newListProtectionsResponse'  customize = (ListProtectionsResponse <<< customize) { "NextToken": Nothing, "Protections": Nothing }
 
 
 
 -- | <p>Exception that indicates that the subscription you are trying to delete has not yet completed the 1-year commitment. You cannot delete this subscription.</p>
 newtype LockedSubscriptionException = LockedSubscriptionException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeLockedSubscriptionException :: Newtype LockedSubscriptionException _
 derive instance repGenericLockedSubscriptionException :: Generic LockedSubscriptionException _
@@ -679,12 +678,12 @@ instance encodeLockedSubscriptionException :: Encode LockedSubscriptionException
 
 -- | Constructs LockedSubscriptionException from required parameters
 newLockedSubscriptionException :: LockedSubscriptionException
-newLockedSubscriptionException  = LockedSubscriptionException { "message": (NullOrUndefined Nothing) }
+newLockedSubscriptionException  = LockedSubscriptionException { "message": Nothing }
 
 -- | Constructs LockedSubscriptionException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLockedSubscriptionException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> LockedSubscriptionException
-newLockedSubscriptionException'  customize = (LockedSubscriptionException <<< customize) { "message": (NullOrUndefined Nothing) }
+newLockedSubscriptionException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> LockedSubscriptionException
+newLockedSubscriptionException'  customize = (LockedSubscriptionException <<< customize) { "message": Nothing }
 
 
 
@@ -699,7 +698,7 @@ instance encodeMaxResults :: Encode MaxResults where encode = genericEncode opti
 
 -- | <p>The mitigation applied to a DDoS attack.</p>
 newtype Mitigation = Mitigation 
-  { "MitigationName" :: NullOrUndefined (String)
+  { "MitigationName" :: Maybe (String)
   }
 derive instance newtypeMitigation :: Newtype Mitigation _
 derive instance repGenericMitigation :: Generic Mitigation _
@@ -709,12 +708,12 @@ instance encodeMitigation :: Encode Mitigation where encode = genericEncode opti
 
 -- | Constructs Mitigation from required parameters
 newMitigation :: Mitigation
-newMitigation  = Mitigation { "MitigationName": (NullOrUndefined Nothing) }
+newMitigation  = Mitigation { "MitigationName": Nothing }
 
 -- | Constructs Mitigation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMitigation' :: ( { "MitigationName" :: NullOrUndefined (String) } -> {"MitigationName" :: NullOrUndefined (String) } ) -> Mitigation
-newMitigation'  customize = (Mitigation <<< customize) { "MitigationName": (NullOrUndefined Nothing) }
+newMitigation' :: ( { "MitigationName" :: Maybe (String) } -> {"MitigationName" :: Maybe (String) } ) -> Mitigation
+newMitigation'  customize = (Mitigation <<< customize) { "MitigationName": Nothing }
 
 
 
@@ -729,7 +728,7 @@ instance encodeMitigationList :: Encode MitigationList where encode = genericEnc
 
 -- | <p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>
 newtype OptimisticLockException = OptimisticLockException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeOptimisticLockException :: Newtype OptimisticLockException _
 derive instance repGenericOptimisticLockException :: Generic OptimisticLockException _
@@ -739,20 +738,20 @@ instance encodeOptimisticLockException :: Encode OptimisticLockException where e
 
 -- | Constructs OptimisticLockException from required parameters
 newOptimisticLockException :: OptimisticLockException
-newOptimisticLockException  = OptimisticLockException { "message": (NullOrUndefined Nothing) }
+newOptimisticLockException  = OptimisticLockException { "message": Nothing }
 
 -- | Constructs OptimisticLockException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOptimisticLockException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> OptimisticLockException
-newOptimisticLockException'  customize = (OptimisticLockException <<< customize) { "message": (NullOrUndefined Nothing) }
+newOptimisticLockException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> OptimisticLockException
+newOptimisticLockException'  customize = (OptimisticLockException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>An object that represents a resource that is under DDoS protection.</p>
 newtype Protection = Protection 
-  { "Id" :: NullOrUndefined (ProtectionId)
-  , "Name" :: NullOrUndefined (ProtectionName)
-  , "ResourceArn" :: NullOrUndefined (ResourceArn)
+  { "Id" :: Maybe (ProtectionId)
+  , "Name" :: Maybe (ProtectionName)
+  , "ResourceArn" :: Maybe (ResourceArn)
   }
 derive instance newtypeProtection :: Newtype Protection _
 derive instance repGenericProtection :: Generic Protection _
@@ -762,12 +761,12 @@ instance encodeProtection :: Encode Protection where encode = genericEncode opti
 
 -- | Constructs Protection from required parameters
 newProtection :: Protection
-newProtection  = Protection { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ResourceArn": (NullOrUndefined Nothing) }
+newProtection  = Protection { "Id": Nothing, "Name": Nothing, "ResourceArn": Nothing }
 
 -- | Constructs Protection's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProtection' :: ( { "Id" :: NullOrUndefined (ProtectionId) , "Name" :: NullOrUndefined (ProtectionName) , "ResourceArn" :: NullOrUndefined (ResourceArn) } -> {"Id" :: NullOrUndefined (ProtectionId) , "Name" :: NullOrUndefined (ProtectionName) , "ResourceArn" :: NullOrUndefined (ResourceArn) } ) -> Protection
-newProtection'  customize = (Protection <<< customize) { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ResourceArn": (NullOrUndefined Nothing) }
+newProtection' :: ( { "Id" :: Maybe (ProtectionId) , "Name" :: Maybe (ProtectionName) , "ResourceArn" :: Maybe (ResourceArn) } -> {"Id" :: Maybe (ProtectionId) , "Name" :: Maybe (ProtectionName) , "ResourceArn" :: Maybe (ResourceArn) } ) -> Protection
+newProtection'  customize = (Protection <<< customize) { "Id": Nothing, "Name": Nothing, "ResourceArn": Nothing }
 
 
 
@@ -800,7 +799,7 @@ instance encodeProtections :: Encode Protections where encode = genericEncode op
 
 -- | <p>Exception indicating the specified resource already exists.</p>
 newtype ResourceAlreadyExistsException = ResourceAlreadyExistsException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeResourceAlreadyExistsException :: Newtype ResourceAlreadyExistsException _
 derive instance repGenericResourceAlreadyExistsException :: Generic ResourceAlreadyExistsException _
@@ -810,12 +809,12 @@ instance encodeResourceAlreadyExistsException :: Encode ResourceAlreadyExistsExc
 
 -- | Constructs ResourceAlreadyExistsException from required parameters
 newResourceAlreadyExistsException :: ResourceAlreadyExistsException
-newResourceAlreadyExistsException  = ResourceAlreadyExistsException { "message": (NullOrUndefined Nothing) }
+newResourceAlreadyExistsException  = ResourceAlreadyExistsException { "message": Nothing }
 
 -- | Constructs ResourceAlreadyExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceAlreadyExistsException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ResourceAlreadyExistsException
-newResourceAlreadyExistsException'  customize = (ResourceAlreadyExistsException <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceAlreadyExistsException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ResourceAlreadyExistsException
+newResourceAlreadyExistsException'  customize = (ResourceAlreadyExistsException <<< customize) { "message": Nothing }
 
 
 
@@ -839,7 +838,7 @@ instance encodeResourceArnFilterList :: Encode ResourceArnFilterList where encod
 
 -- | <p>Exception indicating the specified resource does not exist.</p>
 newtype ResourceNotFoundException = ResourceNotFoundException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeResourceNotFoundException :: Newtype ResourceNotFoundException _
 derive instance repGenericResourceNotFoundException :: Generic ResourceNotFoundException _
@@ -849,21 +848,21 @@ instance encodeResourceNotFoundException :: Encode ResourceNotFoundException whe
 
 -- | Constructs ResourceNotFoundException from required parameters
 newResourceNotFoundException :: ResourceNotFoundException
-newResourceNotFoundException  = ResourceNotFoundException { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException  = ResourceNotFoundException { "message": Nothing }
 
 -- | Constructs ResourceNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFoundException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ResourceNotFoundException
-newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ResourceNotFoundException
+newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The attack information for the specified SubResource.</p>
 newtype SubResourceSummary = SubResourceSummary 
-  { "Type" :: NullOrUndefined (SubResourceType)
-  , "Id" :: NullOrUndefined (String)
-  , "AttackVectors" :: NullOrUndefined (SummarizedAttackVectorList)
-  , "Counters" :: NullOrUndefined (SummarizedCounterList)
+  { "Type" :: Maybe (SubResourceType)
+  , "Id" :: Maybe (String)
+  , "AttackVectors" :: Maybe (SummarizedAttackVectorList)
+  , "Counters" :: Maybe (SummarizedCounterList)
   }
 derive instance newtypeSubResourceSummary :: Newtype SubResourceSummary _
 derive instance repGenericSubResourceSummary :: Generic SubResourceSummary _
@@ -873,12 +872,12 @@ instance encodeSubResourceSummary :: Encode SubResourceSummary where encode = ge
 
 -- | Constructs SubResourceSummary from required parameters
 newSubResourceSummary :: SubResourceSummary
-newSubResourceSummary  = SubResourceSummary { "AttackVectors": (NullOrUndefined Nothing), "Counters": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newSubResourceSummary  = SubResourceSummary { "AttackVectors": Nothing, "Counters": Nothing, "Id": Nothing, "Type": Nothing }
 
 -- | Constructs SubResourceSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubResourceSummary' :: ( { "Type" :: NullOrUndefined (SubResourceType) , "Id" :: NullOrUndefined (String) , "AttackVectors" :: NullOrUndefined (SummarizedAttackVectorList) , "Counters" :: NullOrUndefined (SummarizedCounterList) } -> {"Type" :: NullOrUndefined (SubResourceType) , "Id" :: NullOrUndefined (String) , "AttackVectors" :: NullOrUndefined (SummarizedAttackVectorList) , "Counters" :: NullOrUndefined (SummarizedCounterList) } ) -> SubResourceSummary
-newSubResourceSummary'  customize = (SubResourceSummary <<< customize) { "AttackVectors": (NullOrUndefined Nothing), "Counters": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newSubResourceSummary' :: ( { "Type" :: Maybe (SubResourceType) , "Id" :: Maybe (String) , "AttackVectors" :: Maybe (SummarizedAttackVectorList) , "Counters" :: Maybe (SummarizedCounterList) } -> {"Type" :: Maybe (SubResourceType) , "Id" :: Maybe (String) , "AttackVectors" :: Maybe (SummarizedAttackVectorList) , "Counters" :: Maybe (SummarizedCounterList) } ) -> SubResourceSummary
+newSubResourceSummary'  customize = (SubResourceSummary <<< customize) { "AttackVectors": Nothing, "Counters": Nothing, "Id": Nothing, "Type": Nothing }
 
 
 
@@ -902,8 +901,8 @@ instance encodeSubResourceType :: Encode SubResourceType where encode = genericE
 
 -- | <p>Information about the AWS Shield Advanced subscription for an account.</p>
 newtype Subscription = Subscription 
-  { "StartTime" :: NullOrUndefined (Types.Timestamp)
-  , "TimeCommitmentInSeconds" :: NullOrUndefined (DurationInSeconds)
+  { "StartTime" :: Maybe (Types.Timestamp)
+  , "TimeCommitmentInSeconds" :: Maybe (DurationInSeconds)
   }
 derive instance newtypeSubscription :: Newtype Subscription _
 derive instance repGenericSubscription :: Generic Subscription _
@@ -913,12 +912,12 @@ instance encodeSubscription :: Encode Subscription where encode = genericEncode 
 
 -- | Constructs Subscription from required parameters
 newSubscription :: Subscription
-newSubscription  = Subscription { "StartTime": (NullOrUndefined Nothing), "TimeCommitmentInSeconds": (NullOrUndefined Nothing) }
+newSubscription  = Subscription { "StartTime": Nothing, "TimeCommitmentInSeconds": Nothing }
 
 -- | Constructs Subscription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubscription' :: ( { "StartTime" :: NullOrUndefined (Types.Timestamp) , "TimeCommitmentInSeconds" :: NullOrUndefined (DurationInSeconds) } -> {"StartTime" :: NullOrUndefined (Types.Timestamp) , "TimeCommitmentInSeconds" :: NullOrUndefined (DurationInSeconds) } ) -> Subscription
-newSubscription'  customize = (Subscription <<< customize) { "StartTime": (NullOrUndefined Nothing), "TimeCommitmentInSeconds": (NullOrUndefined Nothing) }
+newSubscription' :: ( { "StartTime" :: Maybe (Types.Timestamp) , "TimeCommitmentInSeconds" :: Maybe (DurationInSeconds) } -> {"StartTime" :: Maybe (Types.Timestamp) , "TimeCommitmentInSeconds" :: Maybe (DurationInSeconds) } ) -> Subscription
+newSubscription'  customize = (Subscription <<< customize) { "StartTime": Nothing, "TimeCommitmentInSeconds": Nothing }
 
 
 
@@ -934,7 +933,7 @@ instance encodeSubscriptionState :: Encode SubscriptionState where encode = gene
 -- | <p>A summary of information about the attack.</p>
 newtype SummarizedAttackVector = SummarizedAttackVector 
   { "VectorType" :: (String)
-  , "VectorCounters" :: NullOrUndefined (SummarizedCounterList)
+  , "VectorCounters" :: Maybe (SummarizedCounterList)
   }
 derive instance newtypeSummarizedAttackVector :: Newtype SummarizedAttackVector _
 derive instance repGenericSummarizedAttackVector :: Generic SummarizedAttackVector _
@@ -944,12 +943,12 @@ instance encodeSummarizedAttackVector :: Encode SummarizedAttackVector where enc
 
 -- | Constructs SummarizedAttackVector from required parameters
 newSummarizedAttackVector :: String -> SummarizedAttackVector
-newSummarizedAttackVector _VectorType = SummarizedAttackVector { "VectorType": _VectorType, "VectorCounters": (NullOrUndefined Nothing) }
+newSummarizedAttackVector _VectorType = SummarizedAttackVector { "VectorType": _VectorType, "VectorCounters": Nothing }
 
 -- | Constructs SummarizedAttackVector's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSummarizedAttackVector' :: String -> ( { "VectorType" :: (String) , "VectorCounters" :: NullOrUndefined (SummarizedCounterList) } -> {"VectorType" :: (String) , "VectorCounters" :: NullOrUndefined (SummarizedCounterList) } ) -> SummarizedAttackVector
-newSummarizedAttackVector' _VectorType customize = (SummarizedAttackVector <<< customize) { "VectorType": _VectorType, "VectorCounters": (NullOrUndefined Nothing) }
+newSummarizedAttackVector' :: String -> ( { "VectorType" :: (String) , "VectorCounters" :: Maybe (SummarizedCounterList) } -> {"VectorType" :: (String) , "VectorCounters" :: Maybe (SummarizedCounterList) } ) -> SummarizedAttackVector
+newSummarizedAttackVector' _VectorType customize = (SummarizedAttackVector <<< customize) { "VectorType": _VectorType, "VectorCounters": Nothing }
 
 
 
@@ -964,12 +963,12 @@ instance encodeSummarizedAttackVectorList :: Encode SummarizedAttackVectorList w
 
 -- | <p>The counter that describes a DDoS attack.</p>
 newtype SummarizedCounter = SummarizedCounter 
-  { "Name" :: NullOrUndefined (String)
-  , "Max" :: NullOrUndefined (Number)
-  , "Average" :: NullOrUndefined (Number)
-  , "Sum" :: NullOrUndefined (Number)
-  , "N" :: NullOrUndefined (Int)
-  , "Unit" :: NullOrUndefined (String)
+  { "Name" :: Maybe (String)
+  , "Max" :: Maybe (Number)
+  , "Average" :: Maybe (Number)
+  , "Sum" :: Maybe (Number)
+  , "N" :: Maybe (Int)
+  , "Unit" :: Maybe (String)
   }
 derive instance newtypeSummarizedCounter :: Newtype SummarizedCounter _
 derive instance repGenericSummarizedCounter :: Generic SummarizedCounter _
@@ -979,12 +978,12 @@ instance encodeSummarizedCounter :: Encode SummarizedCounter where encode = gene
 
 -- | Constructs SummarizedCounter from required parameters
 newSummarizedCounter :: SummarizedCounter
-newSummarizedCounter  = SummarizedCounter { "Average": (NullOrUndefined Nothing), "Max": (NullOrUndefined Nothing), "N": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Sum": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newSummarizedCounter  = SummarizedCounter { "Average": Nothing, "Max": Nothing, "N": Nothing, "Name": Nothing, "Sum": Nothing, "Unit": Nothing }
 
 -- | Constructs SummarizedCounter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSummarizedCounter' :: ( { "Name" :: NullOrUndefined (String) , "Max" :: NullOrUndefined (Number) , "Average" :: NullOrUndefined (Number) , "Sum" :: NullOrUndefined (Number) , "N" :: NullOrUndefined (Int) , "Unit" :: NullOrUndefined (String) } -> {"Name" :: NullOrUndefined (String) , "Max" :: NullOrUndefined (Number) , "Average" :: NullOrUndefined (Number) , "Sum" :: NullOrUndefined (Number) , "N" :: NullOrUndefined (Int) , "Unit" :: NullOrUndefined (String) } ) -> SummarizedCounter
-newSummarizedCounter'  customize = (SummarizedCounter <<< customize) { "Average": (NullOrUndefined Nothing), "Max": (NullOrUndefined Nothing), "N": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Sum": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newSummarizedCounter' :: ( { "Name" :: Maybe (String) , "Max" :: Maybe (Number) , "Average" :: Maybe (Number) , "Sum" :: Maybe (Number) , "N" :: Maybe (Int) , "Unit" :: Maybe (String) } -> {"Name" :: Maybe (String) , "Max" :: Maybe (Number) , "Average" :: Maybe (Number) , "Sum" :: Maybe (Number) , "N" :: Maybe (Int) , "Unit" :: Maybe (String) } ) -> SummarizedCounter
+newSummarizedCounter'  customize = (SummarizedCounter <<< customize) { "Average": Nothing, "Max": Nothing, "N": Nothing, "Name": Nothing, "Sum": Nothing, "Unit": Nothing }
 
 
 
@@ -999,8 +998,8 @@ instance encodeSummarizedCounterList :: Encode SummarizedCounterList where encod
 
 -- | <p>The time range.</p>
 newtype TimeRange = TimeRange 
-  { "FromInclusive" :: NullOrUndefined (AttackTimestamp)
-  , "ToExclusive" :: NullOrUndefined (AttackTimestamp)
+  { "FromInclusive" :: Maybe (AttackTimestamp)
+  , "ToExclusive" :: Maybe (AttackTimestamp)
   }
 derive instance newtypeTimeRange :: Newtype TimeRange _
 derive instance repGenericTimeRange :: Generic TimeRange _
@@ -1010,12 +1009,12 @@ instance encodeTimeRange :: Encode TimeRange where encode = genericEncode option
 
 -- | Constructs TimeRange from required parameters
 newTimeRange :: TimeRange
-newTimeRange  = TimeRange { "FromInclusive": (NullOrUndefined Nothing), "ToExclusive": (NullOrUndefined Nothing) }
+newTimeRange  = TimeRange { "FromInclusive": Nothing, "ToExclusive": Nothing }
 
 -- | Constructs TimeRange's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTimeRange' :: ( { "FromInclusive" :: NullOrUndefined (AttackTimestamp) , "ToExclusive" :: NullOrUndefined (AttackTimestamp) } -> {"FromInclusive" :: NullOrUndefined (AttackTimestamp) , "ToExclusive" :: NullOrUndefined (AttackTimestamp) } ) -> TimeRange
-newTimeRange'  customize = (TimeRange <<< customize) { "FromInclusive": (NullOrUndefined Nothing), "ToExclusive": (NullOrUndefined Nothing) }
+newTimeRange' :: ( { "FromInclusive" :: Maybe (AttackTimestamp) , "ToExclusive" :: Maybe (AttackTimestamp) } -> {"FromInclusive" :: Maybe (AttackTimestamp) , "ToExclusive" :: Maybe (AttackTimestamp) } ) -> TimeRange
+newTimeRange'  customize = (TimeRange <<< customize) { "FromInclusive": Nothing, "ToExclusive": Nothing }
 
 
 
